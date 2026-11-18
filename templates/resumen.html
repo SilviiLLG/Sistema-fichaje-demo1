@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Resumen de horas{% endblock %}
+{% block content %}
+<div class="page-heading">
+  <a class="back-link" href="{{ url_for('admin_panel') }}">← Volver al panel</a>
+  <span class="eyebrow">INFORME ADMINISTRATIVO</span>
+  <h1>Resumen de horas y <span>viáticos</span></h1>
+  <p>El cálculo de viáticos de esta demo utiliza una tarifa ilustrativa de $500 por hora.</p>
+</div>
+<section class="panel">
+  <div id="summary-table" class="table-wrap"></div>
+</section>
+{% endblock %}

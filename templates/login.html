@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Acceso administrativo{% endblock %}
+{% block content %}
+<div class="auth-wrap">
+  <section class="panel auth-panel">
+    <div class="auth-symbol">⌘</div>
+    <span class="eyebrow">ÁREA PRIVADA · DEMO</span>
+    <h1>Panel de <span>administración</span></h1>
+    <p>Ingresá con las credenciales de demostración para explorar las herramientas de gestión.</p>
+    <form method="POST">
+      <label for="usuario">Usuario</label>
+      <input id="usuario" name="usuario" autocomplete="username" placeholder="Usuario demo" required>
+      <label for="clave">Contraseña</label>
+      <input id="clave" name="clave" type="password" autocomplete="current-password" placeholder="Contraseña" required>
+      <button class="button primary" type="submit">Ingresar al panel →</button>
+    </form>
+    <div class="demo-credentials"><strong>Acceso de prueba</strong><br>Usuario: <code>demo</code> · Contraseña: <code>demo1234</code></div>
+    <a class="back-link" href="{{ url_for('fichar') }}">← Volver al fichaje</a>
+  </section>
+</div>
+{% endblock %}

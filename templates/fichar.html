@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Fichar asistencia{% endblock %}
+{% block content %}
+<section class="hero">
+  <div>
+    <span class="eyebrow">PORTAL DE ASISTENCIA</span>
+    <h1>Hola, ¿listo para <span>fichar?</span></h1>
+    <p>Registrá tu asistencia o consultá tus movimientos de forma sencilla.</p>
+  </div>
+  <div class="hero-icon">✓</div>
+</section>
+
+<div class="grid two">
+  <section class="panel">
+    <div class="panel-heading"><div><span class="eyebrow">REGISTRO</span><h2>Fichar asistencia</h2></div><span class="icon-chip">↗</span></div>
+    <form id="fichar-form">
+      <label for="fichar-id">Tu número de identificación</label>
+      <input id="fichar-id" type="number" min="1" placeholder="Ej. 1" required>
+      <button class="button primary" type="submit">Registrar fichaje <span>→</span></button>
+    </form>
+    <div id="fichar-message" class="inline-message" aria-live="polite"></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-heading"><div><span class="eyebrow">CONSULTA</span><h2>Mi historial</h2></div><span class="icon-chip">◷</span></div>
+    <form id="historial-form">
+      <label for="historial-id">Ingresá tu número de identificación</label>
+      <input id="historial-id" type="number" min="1" placeholder="Ej. 1" required>
+      <button class="button secondary" type="submit">Consultar historial <span>→</span></button>
+    </form>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="panel-heading"><div><span class="eyebrow">PERSONAL REGISTRADO</span><h2>Pasantes de ejemplo</h2></div><span class="muted small">Datos ficticios</span></div>
+  <div id="public-pasantes" class="people-list"></div>
+</section>
+
+<div class="admin-link"><span>¿Sos administrador?</span><a href="{{ url_for('login') }}">Ingresar al panel administrativo →</a></div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Historial de asistencia{% endblock %}
+{% block content %}
+<div class="page-heading">
+  <a class="back-link" href="{{ url_for('fichar') }}">← Volver al inicio</a>
+  <span class="eyebrow">CONSULTA PERSONAL</span>
+  <h1>Historial de <span>asistencia</span></h1>
+  <p>Buscá los registros utilizando tu número de identificación.</p>
+</div>
+<section class="panel">
+  <form id="historial-form">
+    <label for="historial-id">Número de identificación</label>
+    <div class="form-inline">
+      <input id="historial-id" type="number" min="1" placeholder="Ej. 1" required>
+      <button class="button primary" type="submit">Buscar</button>
+    </div>
+  </form>
+  <div id="historial-result" class="result-area" aria-live="polite">
+    <p class="empty-state">Ingresá tu ID para consultar tus fichajes.</p>
+  </div>
+</section>
+{% endblock %}

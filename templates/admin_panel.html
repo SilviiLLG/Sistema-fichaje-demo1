@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Administración{% endblock %}
+{% block content %}
+<div class="page-heading">
+  <span class="eyebrow">GESTIÓN DEL SISTEMA</span>
+  <h1>Panel de <span>administración</span></h1>
+  <p>Administrá pasantes y consultá la actividad registrada en esta demo.</p>
+</div>
+<div class="stats-grid">
+  <div class="stat-card"><span>Pasantes</span><strong id="stat-pasantes">0</strong></div>
+  <div class="stat-card"><span>Fichajes registrados</span><strong id="stat-fichajes">0</strong></div>
+  <div class="stat-card"><span>Horas acumuladas</span><strong id="stat-horas">0</strong></div>
+</div>
+<div class="grid two">
+  <section class="panel">
+    <div class="panel-heading"><div><span class="eyebrow">NUEVO REGISTRO</span><h2>Agregar pasante</h2></div><span class="icon-chip">＋</span></div>
+    <form id="add-pasante-form">
+      <label for="nombre">Nombre completo</label>
+      <input id="nombre" name="nombre" placeholder="Ej. Alex García" required maxlength="80">
+      <label for="turno">Turno</label>
+      <select id="turno" name="turno" required><option value="">Seleccionar turno</option><option>Mañana</option><option>Tarde</option><option>Completo</option></select>
+      <label for="horas">Horas por turno</label>
+      <input id="horas" name="horas" type="number" min="0.5" max="24" step="0.5" value="4" required>
+      <button class="button primary" type="submit">Agregar pasante +</button>
+      <div id="admin-message" class="inline-message" aria-live="polite"></div>
+    </form>
+  </section>
+  <section class="panel">
+    <div class="panel-heading"><div><span class="eyebrow">HERRAMIENTAS</span><h2>Acciones rápidas</h2></div><span class="icon-chip">⚙</span></div>
+    <a class="action-row" href="{{ url_for('resumen') }}"><span><b>Resumen de horas y viáticos</b><small>Totales por pasante</small></span><strong>→</strong></a>
+    <button id="export-button" class="action-row action-button"><span><b>Exportar a Excel</b><small>Descargar todos los fichajes</small></span><strong>↓</strong></button>
+    <a class="action-row" href="{{ url_for('fichar') }}"><span><b>Vista de fichaje</b><small>Volver al portal de asistencia</small></span><strong>→</strong></a>
+    <a class="action-row" href="{{ url_for('logout') }}"><span><b>Cerrar sesión</b><small>Salir del administrador</small></span><strong>↗</strong></a>
+  </section>
+</div>
+<section class="panel">
+  <div class="panel-heading"><div><span class="eyebrow">EQUIPO</span><h2>Pasantes registrados</h2></div><span class="muted small">Podés quitar registros de prueba</span></div>
+  <div id="admin-pasantes"></div>
+</section>
+{% endblock %}
