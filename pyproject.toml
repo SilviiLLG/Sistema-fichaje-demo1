@@ -1,0 +1,13 @@
+[project]
+name = "sistema-fichaje-demo"
+version = "1.0.0"
+description = "Demo interactiva de un sistema de fichaje de pasantes"
+requires-python = ">=3.10"
+dependencies = [
+    "Flask>=3.0,<4.0",
+    "pandas>=2.2,<3.0",
+    "openpyxl>=3.1,<4.0"
+]
+
+[tool.vercel]
+entrypoint = "app_code:app"
